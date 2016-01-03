@@ -64,10 +64,10 @@ class API {
 	/**
 	 * POST Request
 	 * @param  [type]     $endpoint API location
-	 * @param  array|null $postdata Optional GET data.
+	 * @param  array|null $postdata Optional POST data.
 	 * @return [type]               [description]
 	 */
-	public function post($endpoint, array $postdata = null) {
+	public function post($endpoint, array $data = array() ) {
 
 		$token = $this->getToken();
 
@@ -76,7 +76,27 @@ class API {
 		$endpoint = 'v1/' . $endpoint;
 
 		return $this->client->post( $endpoint, [
-			'body' => array_merge($postdata, ['access_token' => $token])
+			'body' => array_merge($data, ['access_token' => $token])
+		]);
+    	}
+
+
+    	/**
+	 * PUT Request
+	 * @param  [type]     $endpoint API location
+	 * @param  array|null $postdata Optional PUT data.
+	 * @return [type]               [description]
+	 */
+	public function put($endpoint, array $data = array() ) {
+
+		$token = $this->getToken();
+
+		if( !$token ) return false;
+
+		$endpoint = 'v1/' . $endpoint;
+
+		return $this->client->put( $endpoint, [
+			'body' => array_merge($data, ['access_token' => $token])
 		]);
     	}
 

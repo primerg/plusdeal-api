@@ -30,12 +30,29 @@ class APIRepository {
     	 * @param  [type] $segment endpoint segment.
     	 * @return [type]          JSON format response
     	 */
-    	public function request( $segment ){
+    	public function get( $segment ){
 
 		$response = $this->getApi()->get( $segment );
-		if( $response ) {
-			return $response->json();
-		}
+
+		if( $response ) return $response->json();
+
+		return Response::json(null, 200);
+    	}
+
+    	public function post( $segment, array $params = array() ){
+
+    		$response = $this->getApi()->post( $segment, $params );
+
+		if( $response ) return $response->json(); 
+
+		return Response::json(null, 200);
+    	}
+
+    	public function put( $segment, array $params = array() ){
+
+    		$response = $this->getApi()->put( $segment, $params );
+
+		if( $response ) return $response->json(); 
 
 		return Response::json(null, 200);
     	}
