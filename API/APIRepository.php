@@ -14,13 +14,13 @@ class APIRepository {
 	 */
 	public function getApi() {
 		$api =  new API([
-			'client_id' => 'plusdeal_client', 
-			'client_secret' => '6?tARGUJysq^KE2z', 
-			'username' => 'plusdeal@plusdeal.com', 
-			'password' => '4kTQGVVzH&n&UAkqz'
+			'client_id' => '[enter the client id]', 
+			'client_secret' => '[enter the client secret]', 
+			'username' => '[enter the username]', 
+			'password' => '[enter the user password]'
 		],
-		//'http://devapi.tableme.com/' );
-		'http://table-api.app/' );
+		'http://devapi.tableme.com/' );
+		//'http://table-api.app/' );
 
 		return $api;
     	}
