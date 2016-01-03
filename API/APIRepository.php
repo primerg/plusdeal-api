@@ -19,8 +19,8 @@ class APIRepository {
 			'username' => 'plusdeal@plusdeal.com', 
 			'password' => '4kTQGVVzH&n&UAkqz'
 		],
-		'http://devapi.tableme.com/' );
-		//'http://table-api.app/' );
+		//'http://devapi.tableme.com/' );
+		'http://table-api.app/' );
 
 		return $api;
     	}

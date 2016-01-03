@@ -3,22 +3,8 @@ require "vendor/autoload.php";
 
 use API\APIRepository;
 
-/**
- * Retrieve all Plusdeal restaurants
- */
-function plusdealRestaurants(){
-	$api = new APIRepository();
+$api = new APIRepository();
 
-	return $api->request('plusdeal/restaurants');
-}
-
-/**
- * Retrieve all Plusdeal orders
- */
-function plusdealOrders(){
-	$api = new APIRepository();
-
-	return $api->request('plusdeal/orders');
-}
-
-echo json_encode( plusdealOrders() );
+//echo json_encode( $api->request('plusdeal/restaurants') ); // Retrieve all restaurants
+//echo json_encode( $api->request('plusdeal/orders') ); // Retrieve all orders
+echo json_encode( $api->request('plusdeal/orders/914') ); // Retrieve a single order
