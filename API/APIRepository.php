@@ -39,6 +39,12 @@ class APIRepository {
 		return Response::json(null, 200);
     	}
 
+    	/**
+    	 * Store new resource using POST method by specify an endpoint segment and optional parameters.
+    	 * @param  [type] $segment  Endpoint segment.
+    	 * @param  array  $params  Optional parameters.
+    	 * @return [type]          JSON format result.
+    	 */
     	public function post( $segment, array $params = array() ){
 
     		$response = $this->getApi()->post( $segment, $params );
@@ -48,6 +54,13 @@ class APIRepository {
 		return Response::json(null, 200);
     	}
 
+
+    	/**
+    	 * Store new resource using PUT method by specify an endpoint segment and optional parameters.
+    	 * @param  [type] $segment Endpoint segment.
+    	 * @param  array  $params  Optional parameters.
+    	 * @return [type]          JSON format result.
+    	 */
     	public function put( $segment, array $params = array() ){
 
     		$response = $this->getApi()->put( $segment, $params );
